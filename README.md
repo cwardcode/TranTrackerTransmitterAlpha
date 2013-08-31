@@ -1,10 +1,6 @@
-Date
-====
-08/31/2013
+Author: Chris Ward
 
-Authors
-=======
-Chris Ward
+Version: 08/31/2013
 
 TranTracker
 ===========
