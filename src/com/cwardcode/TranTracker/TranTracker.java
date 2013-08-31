@@ -23,7 +23,7 @@ public class TranTracker extends Activity {
          * Triggered when an item within the spinner's list is selected.
          *
          * @param parent - the <code>AdapterView</code> in which the view
-         *               exists.
+         *                 exists.
          * @param view   - the <code>View</code> in from which the item was
          *               selected.
          * @param pos    - the position of the menu item seected.
