@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 /**
+ * Provides a user interface that allows the user to select which vehicle is
+ * being tracked and begin tracking.
  * 
  * @author Hayden Thomas
  * @author Chris Ward
@@ -23,7 +25,10 @@ public class TranTracker extends Activity {
     private Intent srvIntent;
 
 
-    private class SizeSelectionListener implements AdapterView.OnItemSelectedListener {
+    /**
+     * Listens for user input from a drop-down menu.
+     */
+    private class VehicleSelectionListener implements AdapterView.OnItemSelectedListener {
 
         /**
          * Triggered when an item within the spinner's list is selected.
@@ -50,7 +55,7 @@ public class TranTracker extends Activity {
         }
 
         /**
-         * Nothing.
+         * If nothing is selected, does nothing.
          *
          * @param arg0 - nothing.
          */
@@ -58,6 +63,11 @@ public class TranTracker extends Activity {
         }
     }
 
+    /**
+     * Starts the service that allows the device to be tracked.
+     * 
+     * @param view the area of the screen for the button calling this method.
+     */
     public void startTracking(View view) {
         if(!IS_TRACKING){
             startService(srvIntent);
@@ -71,6 +81,9 @@ public class TranTracker extends Activity {
 
     /**
      * Called when the activity is first created.
+     * 
+     * @param savedInstanceState allows the application to return to its
+     *                           previous configuration after being closed
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,9 +99,13 @@ public class TranTracker extends Activity {
         adapter.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
         gridSpinner.setAdapter(adapter);
-        gridSpinner.setOnItemSelectedListener(new SizeSelectionListener());
+        gridSpinner.setOnItemSelectedListener(new VehicleSelectionListener());
     }
 
+    /**
+     * Returns the current application's context. Allows the service to send
+     * a message to the broadcast receiver.
+     */
     public static Context getAppContext() {
         return context;
     }
