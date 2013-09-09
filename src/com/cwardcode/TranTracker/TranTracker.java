@@ -9,6 +9,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+/**
+ * 
+ * @author Hayden Thomas
+ * @author Chris Ward
+ * @version September 9, 2013
+ */
 public class TranTracker extends Activity {
     private static final String VEHICLE3 = "Catran3";
     private static final String VEHICLE2 = "Catran2";
