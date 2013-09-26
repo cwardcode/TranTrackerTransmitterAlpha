@@ -11,4 +11,4 @@ background.
 
 TODO:
 =====
-1] Secure MySQL Communications by implementing a REST or SOAP system to send data to the server.
+1] Secure MySQL Communications by implementing SSL connection through JDBC
